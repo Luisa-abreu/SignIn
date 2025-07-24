@@ -16,10 +16,10 @@
             <form action="">
                 <label for="email">Email Address</label>
                 <input type="email" name="email" 
-                id="email" placeholder="xxx@xxx.com">
+                id="email" placeholder="xxx@xxx.com" required>
                 <label for="password">Password</label>
                 <div class="card__login-password">
-                    <input type="password" name="password" id="password" placeholder="Insert your password here">
+                    <input type="password" name="password" id="password" placeholder="Insert your password here" required>
                     <button type="button" onclick="mostrarSenha()" id="passwordButton" >Show</button>
                 </div>
                 <script>
@@ -37,11 +37,27 @@
                     }
                 </script>
 
-                <a href="">Forgot Password?</a>
+                <a href="/forgot-password.html">Forgot Password?</a>
                 <button class="login__button"">Sign in</button>
             </form>
         </section>
         <img src="/signIn-background.jpg" alt="" class="login__img">
     </main>
+
+    <script>
+        function mostrarSenha() {
+            const input = document.getElementById('password');
+            const button = event.target;
+
+            if (input.type ==="password") {
+                input.type ="text";
+                button.textContent = "Hide";
+            } else {
+                input.type = "password";
+                button.textContent = "Show";
+            }
+        }
+    </script>
+
 </body>
 </html>
